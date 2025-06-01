@@ -27,6 +27,8 @@ jobs:
           minikube service list
           echo "sleep 15 seconds to let the service pod to start"
           sleep 15
+          echo "describe pods in default namespace"
+          kubectl describe pods -n default
           echo "Get the logs of the pod"
           kubectl logs $(kubectl get pod -n default | awk 'NR==2 {print $1}') -n default
           kubectl get pods -n default
