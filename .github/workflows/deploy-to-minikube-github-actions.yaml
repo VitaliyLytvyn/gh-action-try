@@ -25,5 +25,6 @@ jobs:
     - name: Test service URLs
       run: |
           minikube service list
+          sleep 5
           kubectl get pods -n default
           minikube service nodejs-app --url
